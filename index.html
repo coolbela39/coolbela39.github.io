@@ -21,8 +21,13 @@
           await liff.init({
             liffId: "1657267362-ZWPqp19z", // 請用自己的 liffId
           });
-          let loginFlag = liff.isLoggedIn();
-          console.log(loginFlag);
+          if (liff.isLoggedIn()) {
+            await liff.shareTargetPicker([
+              { type: "text", text: "Helloe world" },
+            ]);
+          } else {
+            liff.login();
+          }
         } catch (err) {
           alert(err.message);
         }
