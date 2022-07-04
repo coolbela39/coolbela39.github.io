@@ -18,6 +18,9 @@
       };
       async function fcInit() {
         try {
+          await liff.init({
+            liffId: "1657267362-ZWPqp19z", // 請用自己的 liffId
+          });
           let loginFlag = liff.isLoggedIn();
           console.log(loginFlag);
         } catch (err) {
